@@ -11,7 +11,7 @@ jobs:
     - name: 🚚 Get latest backend code
       uses: actions/checkout@v2.3.2
       with:
-        path: /  # Specify the directory where backend code is located
+        # path: /  # Specify the directory where backend code is located
         fetch-depth: 0
         submodules: 'recursive'
         ref: main
