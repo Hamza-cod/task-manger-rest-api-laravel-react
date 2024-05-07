@@ -1,30 +1,49 @@
 name: 🚀 Deploy website on push
-
-on: 
+on:
+  pull_request:
+    branches:
+      - master
   push:
-     branches:
-        - master
+    branches:
+      - master
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  tests:
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2.3.2
+      - uses: actions/checkout@v2
 
-    
-    # - name: 📂 Install dependencies
-    #   run: composer install
-    #   working-directory: backend/
-    
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            composer-
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+
+      # - name: Copy .env file
+      #   run: |
+      #     cp .env.ci .env
+      #     cp .env.e .env.testing
+
+      - name: Run composer
+        run: |
+          composer install --no-interaction
+
+      
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: files.000webhost.com
-        username: laravelbrikole
-        password: Hamza5002*1
-        local-dir: backend/
-        server-dir: /public_html/ 
+        server: ftpupload.net
+          username: if0_36496460
+          password: 8W2WZI9rbQ
+          local-dir: backend/
+          server-dir: /laravelbrickol.kesug.com/htdocs/ 
 
 
