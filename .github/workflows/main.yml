@@ -21,10 +21,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftpupload.net
-        username: if0_36496460
-        password: 8W2WZI9rbQ
+        server: files.000webhost.com
+        username: laravelbrikole
+        password: Hamza5002*1
         local-dir: backend/
-        server-dir: /laravelbrickol.wuaze.com/htdocs/ 
+        server-dir: /public_html/ 
 
 
