@@ -1,8 +1,7 @@
 on: 
   push:
-    branches:
-      - master
-
+     branches:
+        - master
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -10,59 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-
-    # - name: Install Dependencies
-    #   run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-
-    # - name: Copy .env
-    #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-
-    # - name: Config Clearing
-    #   run: php artisan config:clear
-
-    # - name: Cache Clearing
-    #   run: php artisan cache:clear
-
-    # - name: Generate App Key
-    #   run: php artisan key:generate
-
-    # - name: Install Npm
-    #   run: npm install
-
-    # - name: Compile Css and Js Assets
-    #   run: npm run build
-
-    # - name: Setup PHP with PECL extension
-    #   uses: shivammathur/setup-php@v2
-    #   with:
-    #     php-version: '8.1'
-
-    # - name: Create Database
-    #   run: |
-    #     mkdir -p database
-    #     touch database/database.sqlite
-
-
-    # - name: Create Database
-    #   run: |
-    #     mkdir -p database
-    #     touch database/database.mysql
-
-
-      # env:
-      #   DB_CONNECTION: mysql
-      #   DB_HOST: sdb-52.hosting.stackcp.net
-      #   DB_PORT: 3306
-      #   DB_DATABASE: laravel-demo-353030345f2b
-      #   DB_USERNAME: laravel-demo-353030345f2b
-      #   DB_PASSWORD: az5evq4py5
-
-
+      uses: actions/checkout@v2.3.2
+    
     - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ftpupload.net
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ftpupload.net
           username: if0_36496460
           password: 8W2WZI9rbQ
           local-dir: backend/
