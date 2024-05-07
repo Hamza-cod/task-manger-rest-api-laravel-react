@@ -17,5 +17,5 @@ jobs:
         server: ftpupload.net
         username: if0_36496460
         password: 8W2WZI9rbQ
-        local-dir: backend
+        local-dir: backend/
         server-dir: /laravelbrickol.kesug.com/htdocs/
