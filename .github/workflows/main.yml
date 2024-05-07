@@ -1,16 +1,27 @@
 on: push
-name: 🚀 Deploy backend on push
+name: Laravel Deployment
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  backend-deploy:
-    name: 🎉 Deploy Backend
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: 🚚 Get latest backend code
-      uses: actions/checkout@v2.3.2
-    
-    - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-    
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+
+    - name: Install dependencies
+      run: composer install
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
