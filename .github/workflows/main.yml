@@ -36,8 +36,7 @@ jobs:
         run: |
           composer install --no-interaction
 
-      
-    - name: 📂 Sync files
+     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftpupload.net
@@ -45,5 +44,7 @@ jobs:
           password: 8W2WZI9rbQ
           local-dir: backend/
           server-dir: /laravelbrickol.kesug.com/htdocs/ 
+
+     
 
 
