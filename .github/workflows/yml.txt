@@ -12,51 +12,51 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-    # - name: Install Dependencies
-    #   run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-    # - name: Copy .env
-    #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-    # - name: Config Clearing
-    #   run: php artisan config:clear
+    - name: Config Clearing
+      run: php artisan config:clear
 
-    # - name: Cache Clearing
-    #   run: php artisan cache:clear
+    - name: Cache Clearing
+      run: php artisan cache:clear
 
-    # - name: Generate App Key
-    #   run: php artisan key:generate
+     - name: Generate App Key
+       run: php artisan key:generate
 
-    # - name: Install Npm
-    #   run: npm install
+    - name: Install Npm
+      run: npm install
 
-    # - name: Compile Css and Js Assets
-    #   run: npm run build
+    - name: Compile Css and Js Assets
+      run: npm run build
 
-    # - name: Setup PHP with PECL extension
-    #   uses: shivammathur/setup-php@v2
-    #   with:
-    #     php-version: '8.1'
+    - name: Setup PHP with PECL extension
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
 
-    # - name: Create Database
-    #   run: |
-    #     mkdir -p database
-    #     touch database/database.sqlite
-
-
-    # - name: Create Database
-    #   run: |
-    #     mkdir -p database
-    #     touch database/database.mysql
+    - name: Create Database
+      run: |
+        mkdir -p database
+        touch database/database.sqlite
 
 
-      # env:
-      #   DB_CONNECTION: mysql
-      #   DB_HOST: sdb-52.hosting.stackcp.net
-      #   DB_PORT: 3306
-      #   DB_DATABASE: laravel-demo-353030345f2b
-      #   DB_USERNAME: laravel-demo-353030345f2b
-      #   DB_PASSWORD: az5evq4py5
+    - name: Create Database
+      run: |
+        mkdir -p database
+        touch database/database.mysql
+
+
+      env:
+        DB_CONNECTION: mysql
+        DB_HOST: sdb-52.hosting.stackcp.net
+        DB_PORT: 3306
+        DB_DATABASE: laravel-demo-353030345f2b
+        DB_USERNAME: laravel-demo-353030345f2b
+        DB_PASSWORD: az5evq4py5
 
 
     - name: 📂 Sync files
