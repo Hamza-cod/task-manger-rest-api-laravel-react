@@ -1,10 +1,9 @@
-on: push
-name: Laravel Deployment
-
-on:
+on: 
   push:
     branches:
-      - main
+      - master
+
+name: 🚀 Deploy website on push
 
 jobs:
   deploy:
