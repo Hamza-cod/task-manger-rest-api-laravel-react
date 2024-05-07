@@ -16,7 +16,7 @@ jobs:
     
     - name: 📂 Install dependencies
       run: composer install
-       working-directory: backend/
+      working-directory: backend/
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
