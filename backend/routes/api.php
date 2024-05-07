@@ -25,7 +25,7 @@ Route::get('/',function(){
         "app"=>"task manager",
     ]);
 });
-Route::post('login',[AuthController::class,'login']);
+Route::post('login',[AuthController::class,'login'])->name('login');
 Route::post('register',[AuthController::class,'register']);
 Route::middleware('auth:sanctum')->group(function (){
     Route::apiResource('tasks',TaskController::class);
