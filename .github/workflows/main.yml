@@ -27,11 +27,12 @@ jobs:
         password: 8W2WZI9rbQ
         local-dir: backend/
         server-dir: /laravelbrickol.kesug.com/htdocs/
-    - name: 📂 Sync public directory to root
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-       with:
-        server: ftpupload.net
-        username: if0_36496460
-        password: 8W2WZI9rbQ
-        local-dir: backend/public/
-        server-dir: /laravelbrickol.kesug.com/htdocs/
+
+    # - name: 📂 Sync public directory to root
+    #   uses: SamKirkland/FTP-Deploy-Action@4.0.0
+    #    with:
+    #     server: ftpupload.net
+    #     username: if0_36496460
+    #     password: 8W2WZI9rbQ
+    #     local-dir: backend/public/
+    #     server-dir: /laravelbrickol.kesug.com/htdocs/
