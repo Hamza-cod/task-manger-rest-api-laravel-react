@@ -1,29 +1,24 @@
-on: 
-  push:
-    branches:
-      - master
-
 name: 🚀 Deploy website on push
 
+on: 
+  push:
+     branches:
+        - main
+
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
-
-    - name: Install dependencies
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2.3.2
+    
+    - name: 📂 Install dependencies
       run: composer install
-
+    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with:
+       with:
         server: ftpupload.net
         username: if0_36496460
         password: 8W2WZI9rbQ
