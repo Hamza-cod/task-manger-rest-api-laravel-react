@@ -23,5 +23,6 @@ jobs:
         username: if0_36496460
         password: 8W2WZI9rbQ
         local-dir: backend/
-        server-dir: /laravelbrickol.wuaze.com/htdocs/
+        server-dir: /laravelbrickol.wuaze.com/htdocs/ 
+        
 
