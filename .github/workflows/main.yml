@@ -3,7 +3,7 @@ name: 🚀 Deploy website on push
 on: 
   push:
      branches:
-        - main
+        - master
 
 jobs:
   web-deploy:
@@ -24,5 +24,5 @@ jobs:
         password: 8W2WZI9rbQ
         local-dir: backend/
         server-dir: /laravelbrickol.wuaze.com/htdocs/ 
-        
+
 
