@@ -14,10 +14,10 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
-        
-    - name: Config Clearing
-      run: php artisan config:clear     
-      working-directory : backend/
+
+    # - name: Config Clearing
+    #   run: php artisan config:clear     
+    #   working-directory : backend/
 
 
     - name: Cache Clearing
