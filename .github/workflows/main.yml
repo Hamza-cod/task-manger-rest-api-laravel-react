@@ -20,9 +20,11 @@ jobs:
 
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      working-directory : backend/
     
     - name: Generate App Key
       run: php artisan key:generate
+      working-directory : backend/
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
