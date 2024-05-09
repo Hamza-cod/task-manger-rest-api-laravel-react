@@ -43,14 +43,7 @@ jobs:
     - name: optimize cach and routes
       run: php artisan optimize
       working-directory : backend/
-
-    # - name: Create SQLite database file
-    #   run: touch database/database.sqlite
-    #   working-directory : backend/
       
-    # - name: migrate database 
-    #   run: php artisan migrate
-    #   working-directory : backend/
     - name: Check if config.php exists
       run: |
           if [ -f "bootstrap/cache/config.php" ]; then
@@ -64,6 +57,16 @@ jobs:
       - name: Delete config.php
         if: steps.check-if-file-exists.outputs.file_exists == 'true'
         run: rm bootstrap/cache/config.php
+
+    # - name: Create SQLite database file
+    #   run: touch database/database.sqlite
+    #   working-directory : backend/
+      
+    # - name: migrate database 
+    #   run: php artisan migrate
+    #   working-directory : backend/
+
+    
 
 
     - name: 📂 Sync files
