@@ -10,8 +10,6 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
-      with:
-        path: laravel
       
     - name: Setup PHP with PECL extension
       uses: shivammathur/setup-php@v2
@@ -23,36 +21,36 @@ jobs:
 
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      working-directory : laravel/backend/
+      working-directory : backend/
 
-    # - name: Copy .env
-    #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    #   working-directory : laravel/backend/
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      working-directory : backend/
     
-    # - name: Generate App Key
-    #   run: php artisan key:generate
-    #   working-directory : laravel/backend/
-    # - name: Config Clearing
-    #   run: php artisan config:clear     
-    #   working-directory : laravel/backend/
+    - name: Generate App Key
+      run: php artisan key:generate
+      working-directory : backend/
+    - name: Config Clearing
+      run: php artisan config:clear     
+      working-directory : backend/
 
 
     - name: Cache Clearing
       run: php artisan cache:clear      
-      working-directory : laravel/backend/
+      working-directory : backend/
 
 
     - name: optimize cach and routes
       run: php artisan optimize
-      working-directory : laravel/backend/
+      working-directory : backend/
 
     - name: Create SQLite database file
       run: touch database/database.sqlite
-      working-directory : laravel/backend/
+      working-directory : backend/
       
-    # - name: migrate database 
-    #   run: php artisan migrate
-    #   working-directory : laravel/backend/
+    - name: migrate database 
+      run: php artisan migrate
+      working-directory : backend/
 
 
     - name: 📂 Sync files
@@ -61,5 +59,5 @@ jobs:
         server: ftpupload.net
         username: if0_36496460
         password: 8W2WZI9rbQ
-        local-dir: laravel/backend/
+        local-dir: backend/
         server-dir: /taskmanager-api.kesug.com/htdocs/
