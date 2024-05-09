@@ -50,9 +50,9 @@ jobs:
       run: touch database/database.sqlite
       working-directory : laravel/backend/
       
-    - name: migrate database 
-      run: php artisan migrate
-      working-directory : laravel/backend/
+    # - name: migrate database 
+    #   run: php artisan migrate
+    #   working-directory : laravel/backend/
 
 
     - name: 📂 Sync files
