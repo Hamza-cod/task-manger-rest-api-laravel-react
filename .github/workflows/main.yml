@@ -22,9 +22,16 @@ jobs:
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       working-directory : backend/
 
-    # - name: Config Clearing
-    #   run: php artisan config:clear     
-    #   working-directory : backend/
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      working-directory : backend/
+    
+    - name: Generate App Key
+      run: php artisan key:generate
+      working-directory : backend/
+    - name: Config Clearing
+      run: php artisan config:clear     
+      working-directory : backend/
 
 
     - name: Cache Clearing
@@ -40,13 +47,6 @@ jobs:
       run: php artisan optimize
       working-directory : backend/
 
-    # - name: Copy .env
-    #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-    #   working-directory : backend/
-    
-    # - name: Generate App Key
-    #   run: php artisan key:generate
-    #   working-directory : backend/
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
