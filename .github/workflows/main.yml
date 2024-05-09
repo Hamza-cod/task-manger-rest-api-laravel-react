@@ -10,6 +10,9 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
+      with:
+        path: backend
+      
     - name: Setup PHP with PECL extension
       uses: shivammathur/setup-php@v2
       with:
@@ -42,7 +45,7 @@ jobs:
     - name: optimize cach and routes
       run: php artisan optimize
       working-directory : backend/
-      
+
     - name: Create SQLite database file
       run: touch database/database.sqlite
       working-directory : backend/
