@@ -23,6 +23,13 @@ jobs:
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       working-directory : backend/
 
+    - name: Install cors
+      run: composer require barryvdh/laravel-cors
+      working-directory : backend/
+    - name: Publich cors
+      run: php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
+      working-directory : backend/
+
     # - name: Copy .env
     #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     #   working-directory : backend/
