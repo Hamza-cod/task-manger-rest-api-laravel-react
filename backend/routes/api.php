@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/app',function(){
+Route::get('/',function(){
     return response()->json([
         "app"=>"task manager",
     ]);
