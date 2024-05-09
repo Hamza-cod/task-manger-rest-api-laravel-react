@@ -11,7 +11,7 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
       with:
-        path: backend
+        path: laravel
       
     - name: Setup PHP with PECL extension
       uses: shivammathur/setup-php@v2
