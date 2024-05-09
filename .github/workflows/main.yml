@@ -63,14 +63,14 @@ jobs:
       run: php artisan migrate
       working-directory : backend/
 
-    - name: 📁 Create Laravel directory on server
-      uses: appleboy/ssh-action@master
-      with:
-        server: ftpupload.net
-        username: if0_36496460
-        password: 8W2WZI9rbQ
-        script: |
-          mkdir -p taskmanager-api.wuaze.com/htdocs/laravel/
+    # - name: 📁 Create Laravel directory on server
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     server: ftpupload.net
+    #     username: if0_36496460
+    #     password: 8W2WZI9rbQ
+    #     script: |
+    #       mkdir -p taskmanager-api.wuaze.com/htdocs/laravel/
     
 
 
