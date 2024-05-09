@@ -51,9 +51,9 @@ jobs:
     # - name: migrate database 
     #   run: php artisan migrate
     #   working-directory : backend/
-    
+
     - name: Check if config.php exists
-        run: |
+      run: |
           if [ -f "bootstrap/cache/config.php" ]; then
             echo "config.php exists."
             echo "::set-output name=file_exists::true"
