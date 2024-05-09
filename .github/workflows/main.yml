@@ -25,16 +25,16 @@ jobs:
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       working-directory : laravel/backend/
 
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      working-directory : laravel/backend/
+    # - name: Copy .env
+    #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    #   working-directory : laravel/backend/
     
-    - name: Generate App Key
-      run: php artisan key:generate
-      working-directory : backend/
-    - name: Config Clearing
-      run: php artisan config:clear     
-      working-directory : laravel/backend/
+    # - name: Generate App Key
+    #   run: php artisan key:generate
+    #   working-directory : laravel/backend/
+    # - name: Config Clearing
+    #   run: php artisan config:clear     
+    #   working-directory : laravel/backend/
 
 
     - name: Cache Clearing
