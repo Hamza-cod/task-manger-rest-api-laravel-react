@@ -61,5 +61,5 @@ jobs:
         server: ftpupload.net
         username: if0_36496460
         password: 8W2WZI9rbQ
-        local-dir: backend/
+        local-dir: laravel/backend/
         server-dir: /taskmanager-api.kesug.com/htdocs/
