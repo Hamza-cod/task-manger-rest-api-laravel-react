@@ -3,8 +3,10 @@ on:
     branches:
       - master
 name: 🚀 Deploy website on push
+
 jobs:
-  web-deploy:
+
+ web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
