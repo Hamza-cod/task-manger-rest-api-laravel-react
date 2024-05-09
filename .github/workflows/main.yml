@@ -40,9 +40,9 @@ jobs:
       working-directory : backend/
 
 
-    - name: optimize cach and routes
-      run: php artisan optimize
-      working-directory : backend/
+    # - name: optimize cach and routes
+    #   run: php artisan optimize
+    #   working-directory : backend/
 
     
 
