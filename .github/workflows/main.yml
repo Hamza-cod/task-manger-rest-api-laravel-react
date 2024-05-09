@@ -44,20 +44,7 @@ jobs:
       run: php artisan optimize
       working-directory : backend/
 
-    - name: Check if config.php exists
-      id: check-if-file-exists
-      run: |
-          if [ -f "bootstrap/cache/config.php" ]; then
-            echo "config.php exists."
-            echo "::set-output name=file_exists::true"
-          else
-            echo "config.php does not exist."
-            echo "::set-output name=file_exists::false"
-          fi
-
-      - name: Delete config.php
-        if: steps.check-if-file-exists.outputs.file_exists == 'true'
-        run: rm bootstrap/cache/config.php
+    
 
     # - name: Create SQLite database file
     #   run: touch database/database.sqlite
