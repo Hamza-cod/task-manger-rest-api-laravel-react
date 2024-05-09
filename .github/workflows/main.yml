@@ -81,4 +81,4 @@ jobs:
         username: if0_36301216
         password: k9yw7XD3MuuxGzm
         local-dir: backend/
-        server-dir: taskmanager-api.kesug.com/htdocs/laravel/
+        server-dir: 	taskmanager-api.wuaze.com/htdocs/laravel/
