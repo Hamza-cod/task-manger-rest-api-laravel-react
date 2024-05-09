@@ -51,4 +51,4 @@ jobs:
         username: if0_36496460
         password: 8W2WZI9rbQ
         local-dir: backend/
-        server-dir: /laravelbrickol.kesug.com/htdocs/
+        server-dir: /taskmanager-api.kesug.com/htdocs/
