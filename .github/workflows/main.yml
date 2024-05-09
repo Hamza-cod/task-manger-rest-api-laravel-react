@@ -44,7 +44,7 @@ jobs:
       working-directory : backend/
       
     - name: migrate database 
-      run: php artisan optimize
+      run: php artisan migrate
       working-directory : backend/
 
 
