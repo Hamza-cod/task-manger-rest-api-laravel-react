@@ -23,12 +23,12 @@ jobs:
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       working-directory : backend/
 
-    # - name: Install cors
-    #   run: composer require barryvdh/laravel-cors
-    #   working-directory : backend/
-    # - name: Publich cors
-    #   run: php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
-    #   working-directory : backend/
+    - name: Install cors
+      run: composer require barryvdh/laravel-cors
+      working-directory : backend/
+    - name: Publich cors
+      run: php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
+      working-directory : backend/
 
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -37,17 +37,9 @@ jobs:
     - name: Generate App Key
       run: php artisan key:generate
       working-directory : backend/
-    # - name: Config Clearing
-    #   run: php artisan config:clear     
-    #   working-directory : backend/
-   - name: 📁 Create Laravel directory on server
-      uses: appleboy/ssh-action@master
-      with:
-        server: ftpupload.net
-        username: if0_36496460
-        password: 8W2WZI9rbQ
-        script: |
-          mkdir -p taskmanager-api.wuaze.com/htdocs/laravel
+    - name: Config Clearing
+      run: php artisan config:clear     
+      working-directory : backend/
 
 
     - name: Cache Clearing
@@ -69,6 +61,14 @@ jobs:
       run: php artisan migrate
       working-directory : backend/
 
+    - name: 📁 Create Laravel directory on server
+      uses: appleboy/ssh-action@master
+      with:
+        server: ftpupload.net
+        username: if0_36496460
+        password: 8W2WZI9rbQ
+        script: |
+          mkdir -p taskmanager-api.wuaze.com/htdocs/laravel/
     
 
 
@@ -79,4 +79,4 @@ jobs:
         username: if0_36496460
         password: 8W2WZI9rbQ
         local-dir: backend/
-        server-dir: /taskmanager-api.wuaze.com/htdocs/laravel/
+        server-dir: /taskmanager-api.kesug.com/htdocs/
