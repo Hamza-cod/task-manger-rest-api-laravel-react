@@ -43,8 +43,9 @@ jobs:
     - name: optimize cach and routes
       run: php artisan optimize
       working-directory : backend/
-      
+
     - name: Check if config.php exists
+      id: check-if-file-exists
       run: |
           if [ -f "bootstrap/cache/config.php" ]; then
             echo "config.php exists."
