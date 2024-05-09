@@ -39,19 +39,19 @@ jobs:
     - name: Generate App Key
       run: php artisan key:generate
       working-directory : backend/
-    - name: Config Clearing
-      run: php artisan config:clear     
-      working-directory : backend/
-
-
-    - name: Cache Clearing
-      run: php artisan cache:clear      
-      working-directory : backend/
-
-
-    # - name: optimize cach and routes
-    #   run: php artisan optimize
+    # - name: Config Clearing
+    #   run: php artisan config:clear     
     #   working-directory : backend/
+
+
+    # - name: Cache Clearing
+    #   run: php artisan cache:clear      
+    #   working-directory : backend/
+
+
+    - name: optimize cach and routes
+      run: php artisan optimize
+      working-directory : backend/
 
     
 
