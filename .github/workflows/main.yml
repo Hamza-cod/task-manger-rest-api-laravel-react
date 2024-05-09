@@ -23,34 +23,34 @@ jobs:
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       working-directory : backend/
 
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      working-directory : backend/
+    # - name: Copy .env
+    #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    #   working-directory : backend/
     
-    - name: Generate App Key
-      run: php artisan key:generate
-      working-directory : backend/
-    - name: Config Clearing
-      run: php artisan config:clear     
-      working-directory : backend/
+    # - name: Generate App Key
+    #   run: php artisan key:generate
+    #   working-directory : backend/
+    # - name: Config Clearing
+    #   run: php artisan config:clear     
+    #   working-directory : backend/
 
 
-    - name: Cache Clearing
-      run: php artisan cache:clear      
-      working-directory : backend/
+    # - name: Cache Clearing
+    #   run: php artisan cache:clear      
+    #   working-directory : backend/
 
 
     - name: optimize cach and routes
       run: php artisan optimize
       working-directory : backend/
 
-    - name: Create SQLite database file
-      run: touch database/database.sqlite
-      working-directory : backend/
+    # - name: Create SQLite database file
+    #   run: touch database/database.sqlite
+    #   working-directory : backend/
       
-    - name: migrate database 
-      run: php artisan migrate
-      working-directory : backend/
+    # - name: migrate database 
+    #   run: php artisan migrate
+    #   working-directory : backend/
 
 
     - name: 📂 Sync files
