@@ -71,8 +71,6 @@ jobs:
     #     password: 8W2WZI9rbQ
     #     script: |
     #       mkdir -p taskmanager-api.wuaze.com/htdocs/laravel/
-    
-
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
