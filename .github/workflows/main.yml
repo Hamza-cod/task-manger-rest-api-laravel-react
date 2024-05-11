@@ -39,11 +39,16 @@ jobs:
     # - name: Generate App Key
     #   run: php artisan key:generate
     #   working-directory : backend/
+    env:
+        
+      FRONTEND_URL=http://localhost:3000
+      SANCTUM_STATEFUL_DOMAINS =localhost:3000
+      SESSION_DOMAIN=localhost
 
 
-    # - name: Cache Clearing
-    #   run: php artisan cache:clear      
-    #   working-directory : backend/
+    - name: Cache Clearing
+      run: php artisan cache:clear      
+      working-directory : backend/
 
 
     - name: optimize cach and routes
