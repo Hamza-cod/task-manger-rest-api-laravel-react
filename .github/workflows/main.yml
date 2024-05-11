@@ -37,10 +37,10 @@ jobs:
     #   working-directory : backend/
     
     - name: require cors
-      run: composer require fruitcake/laravel-cors -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer require fruitcake/laravel-cors --no-interaction --ignore-platform-reqs
       working-directory : backend/
     - name: publish cors
-      run: php artisan vendor:publish --tag="cors" -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: php artisan vendor:publish --tag="cors" --no-interaction --ignore-platform-reqs
       working-directory : backend/
     
 
