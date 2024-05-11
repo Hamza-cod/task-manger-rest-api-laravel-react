@@ -52,8 +52,12 @@ jobs:
       working-directory : backend/
 
     - name: Cache Clearing
-      run: php artisan cache:clear      
+      run: php artisan config:cache     
       working-directory : backend/
+
+    # - name: Cache Clearing
+    #   run: php artisan cache:clear      
+    #   working-directory : backend/
     # - name: Config Clearing
     #   run: php artisan config:clear     
     #   working-directory : backend/
