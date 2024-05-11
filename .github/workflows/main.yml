@@ -42,9 +42,9 @@ jobs:
     
 
 
-    - name: Cache Clearing
-      run: php artisan cache:clear      
-      working-directory : backend/
+    # - name: Cache Clearing
+    #   run: php artisan cache:clear      
+    #   working-directory : backend/
 
 
     - name: optimize cach and routes
