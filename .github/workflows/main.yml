@@ -39,9 +39,6 @@ jobs:
     - name: Generate App Key
       run: php artisan key:generate
       working-directory : backend/
-    # - name: Config Clearing
-    #   run: php artisan config:clear     
-    #   working-directory : backend/
 
 
     # - name: Cache Clearing
@@ -53,6 +50,9 @@ jobs:
       run: php artisan optimize
       working-directory : backend/
 
+    - name: Config Clearing
+      run: php artisan config:clear     
+      working-directory : backend/
     
 
     - name: Create SQLite database file
@@ -63,20 +63,11 @@ jobs:
       run: php artisan migrate
       working-directory : backend/
 
-    # - name: 📁 Create Laravel directory on server
-    #   uses: appleboy/ssh-action@master
-    #   with:
-    #     server: ftpupload.net
-    #     username: if0_36496460
-    #     password: 8W2WZI9rbQ
-    #     script: |
-    #       mkdir -p taskmanager-api.wuaze.com/htdocs/laravel/
-
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftpupload.net
-        username: if0_36301216
-        password: k9yw7XD3MuuxGzm
+        server: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
         local-dir: backend/
-        server-dir: taskmanager-api.wuaze.com/htdocs/laravel/
+        server-dir: http://taskmanager-api.rf.gd/htdocs/laravel/
