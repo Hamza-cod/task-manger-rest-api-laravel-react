@@ -6,7 +6,7 @@ name: 🚀 Deploy website on push
 
 jobs:
 
-  web-deploy:
+ web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
@@ -39,10 +39,7 @@ jobs:
     # - name: Generate App Key
     #   run: php artisan key:generate
     #   working-directory : backend/
-     env:
-       FRONTEND_URL=http://localhost:3000
-       SANCTUM_STATEFUL_DOMAINS =localhost:3000
-       SESSION_DOMAIN=localhost
+    
 
 
     - name: Cache Clearing
