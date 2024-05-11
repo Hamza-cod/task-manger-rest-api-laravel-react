@@ -5,17 +5,17 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mime\Header\Headers;
+use Symfony\Component\Mime\Header;
 
 class Cors
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (Headers)  $next
+     * @param  \Closure(\Illuminate\Http\Request): (Header)  $next
      */
     
-    public function handle(Request $request, Closure $next) : Headers
+    public function handle(Request $request, Closure $next) : Header
     {
         return $next($request)->header('Access-Control-Allow-Origin', '*')
       ->header('Access-Control-Allow-Methods', '*')
