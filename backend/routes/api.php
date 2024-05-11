@@ -17,23 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('cors')->group(function () {
-    Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-        return $request->user();
-    });
-    
-    Route::get('/', function () {
-        return response()->json([
-            "app" => "task manager",
-        ]);
-    });
-    
-    Route::post('login', [AuthController::class, 'login'])->name('login');
-    Route::post('register', [AuthController::class, 'register']);
-    
-    Route::middleware('auth:sanctum')->group(function () {
-        Route::apiResource('tasks', TaskController::class);
-        Route::apiResource('projects', ProjectController::class);
-        Route::post('projects/{project}/add_member', [ProjectController::class, 'addMember']);
-    });
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+Route::get('/',function(){
+    return response()->json([
+        "app"=>"task manager",
+    ]);
+});
+Route::post('login',[AuthController::class,'login'])->name('login');
+Route::post('register',[AuthController::class,'register']);
+Route::middleware('auth:sanctum')->group(function (){
+    Route::apiResource('tasks',TaskController::class);
+    Route::apiResource('projects',ProjectController::class);
+    Route::post('projects/{project}/add_member',[ProjectController::class,'addMember']);
 });
