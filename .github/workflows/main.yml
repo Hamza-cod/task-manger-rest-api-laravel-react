@@ -36,9 +36,12 @@ jobs:
     #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     #   working-directory : backend/
     
-    # - name: Generate App Key
-    #   run: php artisan key:generate
-    #   working-directory : backend/
+    - name: require cors
+      run: composer require fruitcake/laravel-cors
+      working-directory : backend/
+    - name: publish cors
+      run: php artisan vendor:publish --tag="cors"
+      working-directory : backend/
     
 
 
