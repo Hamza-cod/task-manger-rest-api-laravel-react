@@ -16,8 +16,9 @@ class Cors
     public function handle(Request $request, Closure $next)
     {
         return $next($request)
-        ->header('Access-Control-Allow-Origin', env('FRONTEND_URL', 'http://localhost:3000'))
-        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-        ->header('Access-Control-Allow-Headers', "Content-Type, Accept, Authorization, X-Requested-With, Application");
+        ->header('Access-Control-Allow-Origin', '*')
+      ->header('Access-Control-Allow-Methods', '*')
+      ->header('Access-Control-Allow-Headers',' Origin, Content-Type, Accept, Authorization, X-Request-With')
+      ->header('Access-Control-Allow-Credentials',' true');
     }
 }
