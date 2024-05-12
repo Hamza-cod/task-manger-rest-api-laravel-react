@@ -51,10 +51,10 @@ jobs:
       run: php artisan optimize
       working-directory : backend/
 
-    - name: Cache Clearing
-      run: php artisan cache:clear      
-      working-directory : backend/
-      
+    # - name: Cache Clearing
+    #   run: php artisan cache:clear      
+    #   working-directory : backend/
+
     - name: Config Clearing
       run: php artisan config:clear     
       working-directory : backend/
